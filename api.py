@@ -11,12 +11,12 @@ async def hello_world():
     return {"Welcome on HELP Your Meal API !"}
 
 ###################
-## Get for Stock ##
+## Get for Users ##
 ###################
 
-@app.get("/stock/{stock_id}")
-async def get_stock(stock_id: int):
-    return {"stock_id": stock_id}
+@app.get("/user/{user_id}")
+async def get_user(user_id: int):
+    return {"user_id": user_id}
 
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000)
