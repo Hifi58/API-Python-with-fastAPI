@@ -11,8 +11,8 @@ async def get_users():
     return conn.execute(users.select()).fetchall()
 
 #getbyid
-@user.get("/user{id}")
-async def get_user(pk_id: int):
+@user.get("/users/{id}")
+async def get_user(id: int):
     return conn.execute(users.select().where(users.c.pk_id == id)).fetchall()
 
 #create
