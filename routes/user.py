@@ -3,7 +3,7 @@ from config.db import conn
 from models.index import users
 from schemas.index import User
 
-user = APIRouter
+user = APIRouter()
 
 #getall
 @user.get("/users")

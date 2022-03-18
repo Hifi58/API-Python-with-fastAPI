@@ -1,4 +1,4 @@
-from sqlalchemy import Table, Column
+from sqlalchemy import Table, Column, Integer, String, Boolean
 from config.db import meta
 
 users = Table(
