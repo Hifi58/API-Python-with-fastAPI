@@ -11,12 +11,12 @@ async def get_users():
     return conn.execute(users.select()).fetchall()
 
 #getbyid
-@user.get("/users{pk_id}")
+@user.get("/user{id}")
 async def get_user(pk_id: int):
-    return conn.execute(users.select().where(users.c.pk_id == pk_id)).fetchall()
+    return conn.execute(users.select().where(users.c.pk_id == id)).fetchall()
 
 #create
-@user.post("/users")
+@user.post("/user")
 async def add_user(user: User):
     conn.execute(users.insert().values(
         mail= user.mail,
@@ -26,7 +26,7 @@ async def add_user(user: User):
     return conn.execute(users.select()).fetchall()
 
 #edit
-@user.put("/users{pk_id}")
+@user.put("/user{pk_id}")
 async def update_user(pk_id: int, user:User):
     conn.execute(users.update().values(
         mail= user.mail,
